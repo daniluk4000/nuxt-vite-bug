@@ -34,7 +34,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/style-resources',
-    // Disable this line to make build work
+    // Comment this line to make build work
     'nuxt-vite',
     [
       '@nuxt/typescript-build',
