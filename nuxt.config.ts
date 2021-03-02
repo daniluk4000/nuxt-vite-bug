@@ -17,7 +17,11 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    { src: '~scss/index.scss', lang: 'sass' },
   ],
+  styleResources: {
+    scss: ['./scss/index.scss'],
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -29,6 +33,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/style-resources',
+    // Disable this line to make build work
     'nuxt-vite',
     [
       '@nuxt/typescript-build',
