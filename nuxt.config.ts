@@ -14,13 +14,14 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    { src: '~scss/index.scss', lang: 'sass' },
-  ],
-  styleResources: {
-    scss: ['./scss/index.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/scss/index.scss";',
+        },
+      },
+    },
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,8 +34,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/style-resources',
-    // Comment this line to make build work
     'nuxt-vite',
     [
       '@nuxt/typescript-build',
